@@ -4,11 +4,18 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class TestController {
-
+    // index:
+    // path: /
+    // controller: App\Controller\TestController::index
+ 
     /**
-     * 
+     * @Route(
+     *   "/",
+     *   name="/",
+     * ) 
      */
     public function index () {
         
@@ -19,16 +26,10 @@ class TestController {
         );
     }
     
-    //   maroute:
-    //   path: /maroute/{age<\d+>?0}
-    //   controller: App\Controller\TestController::maRoute
-    //   methods: [GET]
-    //   host: localhost
-    //   schemes: [https]
     /**
      * @Route(
      *   "/maroute/{age<\d+>?0}",
-     *   name    = "maRoute",
+     *   name    = "maroute",
      *   methods = {"GET"},
      *   host    = "localhost",
      *   schemes = {"https"} 
