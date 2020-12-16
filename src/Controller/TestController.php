@@ -7,9 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TestController {
-    // index:
-    // path: /
-    // controller: App\Controller\TestController::index
  
     /**
      * @Route(
