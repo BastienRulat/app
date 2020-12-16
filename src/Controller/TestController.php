@@ -33,7 +33,7 @@ class TestController {
      * )
      */
     public function maRoute (Request $request, $age) {
-        
+        dd($request);
         return new Response("Vous avez $age ans");
     }
 
