@@ -11,12 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HelloController {
-
-    protected $logger;
-
-    public function __construct(LoggerInterface $logger) {
-        $this->logger = $logger;
-    }
     
     /**
      * @Route(
@@ -24,11 +18,8 @@ class HelloController {
      *   name = "hello",
      * )
      */
-    public function hello ($name, Calculator $calculator, Slugify $slugify, Detector $detector) {
-        $this->logger->info("Function Hello");
-        dump($slugify->slugify("Hello World"));
-        dump($detector->detect(102));
-        dump($detector->detect(10));
-        return new Response("Hello $name paye ".$calculator->calculTVA(200));
+    public function hello ($name) {
+        
+        return new Response("Hello $name");
     }
 }
