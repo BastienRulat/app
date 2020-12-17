@@ -2,15 +2,11 @@
 
 namespace App\Controller;
 
-use App\Taxes\Calculator;
-use App\Taxes\Detector;
-use Cocur\Slugify\Slugify;
-use Psr\Log\LoggerInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HelloController {
+class HelloController extends AbstractController {
     
     /**
      * @Route(
@@ -20,6 +16,9 @@ class HelloController {
      */
     public function hello ($name) {
         
-        return new Response("Hello $name");
+        return new Response($this->render("hello.html.twig", [
+            'name' => $name,
+            'ages' => [5,12,78,45,3,2,21]
+        ]));
     }
 }
